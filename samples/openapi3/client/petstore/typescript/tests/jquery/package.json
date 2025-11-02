@@ -4,16 +4,16 @@
     "@types/jsdom": "^12.2.3",
     "@types/qunit": "^2.9.0",
     "@types/rewire": "^2.5.28",
-    "form-data": "^2.5.1",
-    "jsdom": "^15.0.0",
+    "form-data": "^2.5.5",
+    "jsdom": "^27.1.0",
     "node-qunit-puppeteer": "^1.0.12",
-    "qunit": "^2.9.2",
-    "requirejs": "^2.3.6",
-    "rewire": "^4.0.1",
+    "qunit": "^2.24.2",
+    "requirejs": "^2.3.7",
+    "rewire": "^9.0.1",
     "ts-node": "^3.3.0",
     "ts-petstore-client": "file:../../builds/jquery",
-    "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10"
+    "webpack": "^5.102.1",
+    "webpack-cli": "^6.0.1"
   },
   "scripts": {
     "test": "node ./dist/test-runner.js",
@@ -22,7 +22,7 @@
   "devDependencies": {
     "@types/node": "^8.10.48",
     "raw-loader": "^4.0.0",
-    "ts-loader": "^4.3.1",
+    "ts-loader": "^9.5.4",
     "typescript": "^2.4.1"
   },
   "name": "typescript-test",
