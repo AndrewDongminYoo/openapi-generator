@@ -11,6 +11,7 @@ on:
       - samples/client/petstore/php-nextgen/OpenAPIClient-php/**
 jobs:
   build:
+    if: ${{ !contains(fromJSON('["dependabot[bot]", "renovate[bot]", "snyk-bot", "allcontributors[bot]"]'), github.actor) }}
     name: Build PHP projects
     runs-on: ubuntu-latest
     strategy:

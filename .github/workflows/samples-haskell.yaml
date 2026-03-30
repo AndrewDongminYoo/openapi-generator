@@ -15,6 +15,7 @@ on:
       - samples/client/petstore/haskell-http-client/**
 jobs:
   build:
+    if: ${{ !contains(fromJSON('["dependabot[bot]", "renovate[bot]", "snyk-bot", "allcontributors[bot]"]'), github.actor) }}
     name: Build stack projects
     runs-on: ubuntu-latest
     strategy:

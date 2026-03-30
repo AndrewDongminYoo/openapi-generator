@@ -16,6 +16,7 @@ on:
 
 jobs:
   build:
+    if: ${{ !contains(fromJSON('["dependabot[bot]", "renovate[bot]", "snyk-bot", "allcontributors[bot]"]'), github.actor) }}
     name: Build OCaml
     runs-on: ubuntu-latest
     strategy:

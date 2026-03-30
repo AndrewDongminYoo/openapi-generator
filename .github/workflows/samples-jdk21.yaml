@@ -18,6 +18,7 @@ on:
       - samples/server/petstore/java-helidon-server/v4/se/**
 jobs:
   build:
+    if: ${{ !contains(fromJSON('["dependabot[bot]", "renovate[bot]", "snyk-bot", "allcontributors[bot]"]'), github.actor) }}
     name: Build with JDK21
     runs-on: ubuntu-latest
     strategy:

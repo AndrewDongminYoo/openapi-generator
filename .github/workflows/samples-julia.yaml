@@ -12,6 +12,7 @@ on:
 
 jobs:
   tests-julia:
+    if: ${{ !contains(fromJSON('["dependabot[bot]", "renovate[bot]", "snyk-bot", "allcontributors[bot]"]'), github.actor) }}
     name: Tests Julia
     runs-on: ubuntu-latest
     steps:

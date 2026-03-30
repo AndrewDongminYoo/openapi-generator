@@ -9,6 +9,7 @@ on:
       - samples/client/petstore/crystal/**
 jobs:
   build:
+    if: ${{ !contains(fromJSON('["dependabot[bot]", "renovate[bot]", "snyk-bot", "allcontributors[bot]"]'), github.actor) }}
     name: Build Crystal projects
     runs-on: ubuntu-latest
     strategy:

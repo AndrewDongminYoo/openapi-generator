@@ -9,6 +9,7 @@ on:
       - samples/client/petstore/powershell/**
 jobs:
   build:
+    if: ${{ !contains(fromJSON('["dependabot[bot]", "renovate[bot]", "snyk-bot", "allcontributors[bot]"]'), github.actor) }}
     runs-on: ubuntu-latest
     name: Test Powershell Clients
     strategy:

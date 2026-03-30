@@ -22,6 +22,7 @@ on:
       - samples/client/petstore/java-micronaut-client/**
 jobs:
   build:
+    if: ${{ !contains(fromJSON('["dependabot[bot]", "renovate[bot]", "snyk-bot", "allcontributors[bot]"]'), github.actor) }}
     name: Build Java Client JDK11
     runs-on: ubuntu-latest
     strategy:

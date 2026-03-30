@@ -15,6 +15,7 @@ on:
       - samples/client/petstore/csharp/unityWebRequest/net9/**
 jobs:
   build:
+    if: ${{ !contains(fromJSON('["dependabot[bot]", "renovate[bot]", "snyk-bot", "allcontributors[bot]"]'), github.actor) }}
     name: Build .Net 9 projects
     runs-on: ubuntu-latest
     strategy:

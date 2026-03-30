@@ -7,6 +7,7 @@ on:
       - .github/workflows/samples-typescript-encode-decode.yaml
 jobs:
   build:
+    if: ${{ !contains(fromJSON('["dependabot[bot]", "renovate[bot]", "snyk-bot", "allcontributors[bot]"]'), github.actor) }}
     name: Test TypeScript Encoding / Decoding
     runs-on: ubuntu-latest
     strategy:

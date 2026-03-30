@@ -18,6 +18,7 @@ on:
       - 'samples/server/petstore/java-microprofile/**'
 jobs:
   build:
+    if: ${{ !contains(fromJSON('["dependabot[bot]", "renovate[bot]", "snyk-bot", "allcontributors[bot]"]'), github.actor) }}
     name: Build Java Server
     runs-on: ubuntu-latest
     strategy:

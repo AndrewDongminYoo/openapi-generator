@@ -9,6 +9,7 @@ on:
       - samples/client/petstore/csharp/restsharp/net8/**
 jobs:
   build:
+    if: ${{ !contains(fromJSON('["dependabot[bot]", "renovate[bot]", "snyk-bot", "allcontributors[bot]"]'), github.actor) }}
     name: Build .Net clients
     runs-on: ubuntu-latest
     strategy:

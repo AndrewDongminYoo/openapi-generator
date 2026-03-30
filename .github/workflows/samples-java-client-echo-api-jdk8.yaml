@@ -16,6 +16,7 @@ on:
       - samples/client/echo_api/java/resteasy/**
 jobs:
   build:
+    if: ${{ !contains(fromJSON('["dependabot[bot]", "renovate[bot]", "snyk-bot", "allcontributors[bot]"]'), github.actor) }}
     name: Build Java Client JDK8
     runs-on: ubuntu-latest
     strategy:

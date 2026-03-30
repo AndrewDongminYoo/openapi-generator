@@ -13,6 +13,7 @@ env:
 
 jobs:
   build:
+    if: ${{ !contains(fromJSON('["dependabot[bot]", "renovate[bot]", "snyk-bot", "allcontributors[bot]"]'), github.actor) }}
     name: Build cpp oat++ client
     strategy:
       matrix:

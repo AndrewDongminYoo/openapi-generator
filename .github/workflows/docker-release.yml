@@ -8,6 +8,7 @@ on:
       - master
 jobs:
   docker:
+    if: ${{ !contains(fromJSON('["dependabot[bot]", "renovate[bot]", "snyk-bot", "allcontributors[bot]"]'), github.actor) }}
     name: Publish images
     runs-on: ubuntu-latest
     steps:

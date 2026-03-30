@@ -19,6 +19,7 @@ on:
       - samples/client/others/go/oneof-discriminator-lookup/**
 jobs:
   build:
+    if: ${{ !contains(fromJSON('["dependabot[bot]", "renovate[bot]", "snyk-bot", "allcontributors[bot]"]'), github.actor) }}
     name: Build Go
     runs-on: windows-latest
     strategy:

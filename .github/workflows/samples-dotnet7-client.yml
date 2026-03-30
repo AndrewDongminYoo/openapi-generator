@@ -26,6 +26,7 @@ on:
       - samples/client/petstore/csharp/restsharp/standard2.0/ConditionalSerialization/**
 jobs:
   build:
+    if: ${{ !contains(fromJSON('["dependabot[bot]", "renovate[bot]", "snyk-bot", "allcontributors[bot]"]'), github.actor) }}
     name: Build clients
     runs-on: windows-latest
     strategy:

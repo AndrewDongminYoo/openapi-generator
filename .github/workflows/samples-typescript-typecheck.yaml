@@ -8,6 +8,7 @@ on:
       - .github/workflows/samples-typescript-typecheck.yaml
 jobs:
   build:
+    if: ${{ !contains(fromJSON('["dependabot[bot]", "renovate[bot]", "snyk-bot", "allcontributors[bot]"]'), github.actor) }}
     name: Typecheck TypeScript samples
     runs-on: ubuntu-latest
     strategy:

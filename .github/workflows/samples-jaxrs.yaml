@@ -9,6 +9,7 @@ on:
       - 'samples/server/petstore/jaxrs*/**'
 jobs:
   build:
+    if: ${{ !contains(fromJSON('["dependabot[bot]", "renovate[bot]", "snyk-bot", "allcontributors[bot]"]'), github.actor) }}
     name: Build JAX-RS
     runs-on: ubuntu-latest
     strategy:

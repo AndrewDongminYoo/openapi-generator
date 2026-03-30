@@ -22,6 +22,7 @@ on:
       - modules/openapi-generator-cli/Dockerfile
 jobs:
   build:
+    if: ${{ !contains(fromJSON('["dependabot[bot]", "renovate[bot]", "snyk-bot", "allcontributors[bot]"]'), github.actor) }}
     name: 'Build: Docker'
     runs-on: ubuntu-latest
     steps:

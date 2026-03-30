@@ -9,6 +9,7 @@ on:
       - 'samples/client/petstore/java/okhttp-gson/**'
 jobs:
   build:
+    if: ${{ !contains(fromJSON('["dependabot[bot]", "renovate[bot]", "snyk-bot", "allcontributors[bot]"]'), github.actor) }}
     name: Build sbt/Java client, servers
     runs-on: ubuntu-latest
     strategy:

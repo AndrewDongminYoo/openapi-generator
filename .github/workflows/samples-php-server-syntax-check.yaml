@@ -19,6 +19,7 @@ on:
       - samples/server/petstore/php-slim4/**
 jobs:
   build:
+    if: ${{ !contains(fromJSON('["dependabot[bot]", "renovate[bot]", "snyk-bot", "allcontributors[bot]"]'), github.actor) }}
     name: Build PHP projects
     runs-on: ubuntu-latest
     strategy:

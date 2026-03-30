@@ -9,6 +9,7 @@ on:
       - samples/client/petstore/clojure/**
 jobs:
   build:
+    if: ${{ !contains(fromJSON('["dependabot[bot]", "renovate[bot]", "snyk-bot", "allcontributors[bot]"]'), github.actor) }}
     name: Build Clojure Client (JDK11)
     runs-on: ubuntu-latest
     strategy:
