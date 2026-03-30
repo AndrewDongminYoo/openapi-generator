@@ -25,6 +25,7 @@ on:
 
 jobs:
   test:
+    if: ${{ !contains(fromJSON('["dependabot[bot]", "renovate[bot]", "snyk-bot", "allcontributors[bot]"]'), github.actor) }}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:

@@ -23,6 +23,7 @@ on:
       - samples/client/petstore/scala-sttp4/**
 jobs:
   build:
+    if: ${{ !contains(fromJSON('["dependabot[bot]", "renovate[bot]", "snyk-bot", "allcontributors[bot]"]'), github.actor) }}
     name: Build sbt/Scala
     runs-on: ubuntu-latest
     strategy:

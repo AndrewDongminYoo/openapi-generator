@@ -9,6 +9,7 @@ on:
       - 'samples/server/petstore/java-play-framework**'
 jobs:
   build:
+    if: ${{ !contains(fromJSON('["dependabot[bot]", "renovate[bot]", "snyk-bot", "allcontributors[bot]"]'), github.actor) }}
     name: Build Java Play Framework
     runs-on: ubuntu-latest
     strategy:

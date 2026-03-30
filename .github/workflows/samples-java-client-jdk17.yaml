@@ -21,6 +21,7 @@ on:
       - samples/client/others/java/restclient-enum-in-multipart/**
 jobs:
   build:
+    if: ${{ !contains(fromJSON('["dependabot[bot]", "renovate[bot]", "snyk-bot", "allcontributors[bot]"]'), github.actor) }}
     name: Build Java Client JDK17
     runs-on: ubuntu-latest
     strategy:

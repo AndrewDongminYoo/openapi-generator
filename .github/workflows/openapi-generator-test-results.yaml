@@ -9,6 +9,7 @@ on:
 # separate workflow required due to https://github.com/dorny/test-reporter#recommended-setup-for-public-repositories
 jobs:
   report:
+    if: ${{ !contains(fromJSON('["dependabot[bot]", "renovate[bot]", "snyk-bot", "allcontributors[bot]"]'), github.actor) }}
     runs-on: ubuntu-latest
     steps:
       - uses: dorny/test-reporter@v2

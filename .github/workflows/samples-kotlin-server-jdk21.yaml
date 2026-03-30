@@ -17,6 +17,7 @@ env:
 
 jobs:
   build:
+    if: ${{ !contains(fromJSON('["dependabot[bot]", "renovate[bot]", "snyk-bot", "allcontributors[bot]"]'), github.actor) }}
     name: Build Kotlin server (jdk21)
     runs-on: ubuntu-latest
     strategy:

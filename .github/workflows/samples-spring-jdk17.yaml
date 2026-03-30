@@ -25,6 +25,7 @@ on:
       - samples/openapi3/server/petstore/spring-boot-oneof-interface
 jobs:
   build:
+    if: ${{ !contains(fromJSON('["dependabot[bot]", "renovate[bot]", "snyk-bot", "allcontributors[bot]"]'), github.actor) }}
     name: Build Java Spring (JDK17)
     runs-on: ubuntu-latest
     strategy:

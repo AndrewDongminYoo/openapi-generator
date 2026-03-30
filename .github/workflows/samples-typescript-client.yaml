@@ -78,6 +78,7 @@ on:
       #- samples/client/petstore/typescript-axios/tests/default/**
 jobs:
   build:
+    if: ${{ !contains(fromJSON('["dependabot[bot]", "renovate[bot]", "snyk-bot", "allcontributors[bot]"]'), github.actor) }}
     name: Build projects
     runs-on: ubuntu-latest
     services:

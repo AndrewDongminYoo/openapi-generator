@@ -11,6 +11,7 @@ on:
       - samples/server/petstore/aspnetcore-6.0-*/**
 jobs:
   build:
+    if: ${{ !contains(fromJSON('["dependabot[bot]", "renovate[bot]", "snyk-bot", "allcontributors[bot]"]'), github.actor) }}
     name: Build .Net 6 servers
     runs-on: ubuntu-latest
     strategy:

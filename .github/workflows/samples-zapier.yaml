@@ -10,6 +10,7 @@ on:
 
 jobs:
   validate:
+    if: ${{ !contains(fromJSON('["dependabot[bot]", "renovate[bot]", "snyk-bot", "allcontributors[bot]"]'), github.actor) }}
     name: Test zapier generation
     runs-on: ubuntu-latest
     strategy:

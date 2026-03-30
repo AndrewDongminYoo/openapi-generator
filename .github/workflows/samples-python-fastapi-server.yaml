@@ -9,6 +9,7 @@ on:
       - samples/server/petstore/python-fastapi/**
 jobs:
   build:
+    if: ${{ !contains(fromJSON('["dependabot[bot]", "renovate[bot]", "snyk-bot", "allcontributors[bot]"]'), github.actor) }}
     name: Test Python FastAPI server
     runs-on: ubuntu-latest
     strategy:

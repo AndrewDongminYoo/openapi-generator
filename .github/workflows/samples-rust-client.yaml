@@ -12,6 +12,7 @@ on:
 
 jobs:
   build:
+    if: ${{ !contains(fromJSON('["dependabot[bot]", "renovate[bot]", "snyk-bot", "allcontributors[bot]"]'), github.actor) }}
     name: Build Rust
     runs-on: ubuntu-latest
     services:

@@ -49,6 +49,7 @@ on:
       - samples/client/petstore/java/okhttp-gson-3.1-duplicated-operationid/**
 jobs:
   build:
+    if: ${{ !contains(fromJSON('["dependabot[bot]", "renovate[bot]", "snyk-bot", "allcontributors[bot]"]'), github.actor) }}
     name: Build Java Client JDK11
     runs-on: ubuntu-latest
     strategy:

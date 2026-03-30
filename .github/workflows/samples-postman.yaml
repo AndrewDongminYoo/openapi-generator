@@ -8,6 +8,7 @@ on:
       - .github/workflows/samples-postman.yaml
 jobs:
   build:
+    if: ${{ !contains(fromJSON('["dependabot[bot]", "renovate[bot]", "snyk-bot", "allcontributors[bot]"]'), github.actor) }}
     name: Test Python client
     runs-on: ubuntu-latest
     strategy:

@@ -15,6 +15,7 @@ on:
       - samples/server/petstore/php-laravel-issue-21334/**
 jobs:
   build:
+    if: ${{ !contains(fromJSON('["dependabot[bot]", "renovate[bot]", "snyk-bot", "allcontributors[bot]"]'), github.actor) }}
     name: Build PHP projects
     runs-on: ubuntu-latest
     strategy:

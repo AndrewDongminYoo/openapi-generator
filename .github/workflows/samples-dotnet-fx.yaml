@@ -11,6 +11,7 @@ on:
       - samples/client/petstore/csharp/generichost/net4.8/**
 jobs:
   build:
+    if: ${{ !contains(fromJSON('["dependabot[bot]", "renovate[bot]", "snyk-bot", "allcontributors[bot]"]'), github.actor) }}
     name: Build .Net Framework projects
     runs-on: windows-latest
     strategy:
